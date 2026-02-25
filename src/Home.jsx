@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 function Home() {
   const [city, setCity] = useState("");
   const navigate = useNavigate();
+
   const handleSearch = () => {
     if (!city) {
       alert("Enter a city");
@@ -13,12 +14,27 @@ function Home() {
   };
 
   return (
-<div className="container">
+    <div className="container">
       <h1>Enter your city</h1>
-      <input type="text" placeholder="City name" value={city}  onChange={(e) => setCity(e.target.value)}/>
+
+      <input
+        type="text"
+        placeholder="City name"
+        value={city}
+        onChange={(e) => setCity(e.target.value)}
+      />
+
       <br /><br />
-      <button onClick={handleSearch}>Search</button>
+
+      <button onClick={handleSearch}>Search</button>                       
+
+      <br /><br />
+
+      <button onClick={() => navigate("/dashboard")}>
+        Go To Dashboard
+      </button>
     </div>
   );
 }
+
 export default Home;
