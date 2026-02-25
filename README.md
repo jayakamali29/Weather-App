@@ -43,6 +43,9 @@ Dark / Light mode
 
 <img src="https://github.com/user-attachments/assets/137e0b6c-cf12-4e1d-9f45-26977f74ed71" width="600"/>
 
+<img src="https://github.com/user-attachments/assets/f9f0dfa9-a2c4-41b6-a712-9e23ba00b4e9" width="600" />
+
+
 
 
 
