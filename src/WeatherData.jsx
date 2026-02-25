@@ -6,7 +6,6 @@ function Weather() {
   const location = useLocation();
   const city = location.state?.city;
   const [weather, setWeather] = useState(null);
-
   if (!city) {
     return (
       <div style={{ textAlign: "center", marginTop: "100px" }}>
@@ -14,14 +13,11 @@ function Weather() {
       </div>
     );
   }
-
   useEffect(() => {
     const fetchWeather = async () => {
       try {
         const apiKey = "9ecf123b4b865c96b34bb39e0b3f86dd";   
-
         const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
-
         const res = await fetch(url);
         const data = await res.json();
 
@@ -29,20 +25,17 @@ function Weather() {
           alert("City not found");
           return;
         }
-
         setWeather(data);
       } catch (error) {
         console.error("Error fetching weather:", error);
       }
     };
-
     fetchWeather();
   }, [city]);
 
   return (
     <div className="container">
       <h1>Weather Data</h1>
-
       {weather ? (
         <div style={{ fontSize: "20px", lineHeight: "2" }}>
           <p><WiThermometer size={30} /> Temperature: {weather.main.temp} °C</p>
@@ -57,5 +50,4 @@ function Weather() {
     </div>
   );
 }
-
 export default Weather;
