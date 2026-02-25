@@ -1,0 +1,80 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: url("https://cdn.dribbble.com/userupload/2786170/file/original-96072b5d74fe8a3a1c27682200506ab6.gif")
+    no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+   font-family: Times New Roman;
+  border-radius: 20px;
+  padding: 40px;
+  width: 360px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  color: black;
+}
+
+.container h1 {
+  margin-bottom: 10px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+
+input {
+  width: 85%;
+  padding: 12px;
+  margin-top: 20px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  font-family: Segoe Script;
+  font-size: 16px;
+}
+
+
+button {
+  margin-top: 20px;
+  padding: 12px 30px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg,#544c4a);
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  font-family: Georgia;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg,#808080);
+}
+
+
+.card {
+  margin-top: 25px;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: left;
+}
+
+
+.card p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+p {
+  font-size: 18px;
+}
