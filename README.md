@@ -1,16 +1,44 @@
-# React + Vite
+# 🌦 Weather App (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and responsive Weather Application built using **React.js** and **Open-Meteo API**.
 
-Currently, two official plugins are available:
+This app displays real-time weather details for selected cities like Chennai, Coimbatore, Mumbai, Delhi, and Bangalore.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🌤 Weather Condition
+- 🌡 Temperature (°C)
+- 💧 wind speed(km/h)
+- 🔵 wind direction
+-  🌤 wind code
+- 📍 Multiple City Support
+- 🔄 Dynamic API Fetch using useEffect
+- 💻 Responsive UI Design
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠 Technologies Used
+
+- React.js
+- JavaScript (ES6)
+- CSS
+- Open-Meteo Weather API
+
+---
+✨ Future Improvements
+
+Add more cities
+
+Search functionality
+
+Weather icons instead of codes
+
+7-day forecast
+
+Dark / Light mode
+
+👩‍💻 Author
+
+Jayakamali V
