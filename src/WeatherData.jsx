@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-
+import { WiThermometer, WiHumidity, WiStrongWind, WiBarometer } from "react-icons/wi";
+import { FaCity } from "react-icons/fa";
 function Weather() {
   const location = useLocation();
   const city = location.state?.city;
   const [weather, setWeather] = useState(null);
+
   if (!city) {
     return (
       <div style={{ textAlign: "center", marginTop: "100px" }}>
@@ -12,37 +14,42 @@ function Weather() {
       </div>
     );
   }
+
   useEffect(() => {
-    const data = {
-      chennai: { lat: 13.08, lon: 80.27 },
-      coimbatore: { lat: 11.01, lon: 76.96 },
-      mumbai: { lat: 19.07, lon: 72.87 },
-      delhi: { lat: 28.61, lon: 77.20 },
-      bangalore: { lat: 12.97, lon: 77.59 }
-    };
-const c = data[city.trim().toLowerCase()];
-    if (!c) {
-      alert("City not found");
-      return;
-    }
     const fetchWeather = async () => {
-      const url = `https://api.open-meteo.com/v1/forecast?latitude=${c.lat}&longitude=${c.lon}&current_weather=true`;
-      const res = await fetch(url);
-      const data = await res.json();
-      setWeather(data.current_weather);
+      try {
+        const apiKey = "9ecf123b4b865c96b34bb39e0b3f86dd";   
+
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+
+        const res = await fetch(url);
+        const data = await res.json();
+
+        if (data.cod !== 200) {
+          alert("City not found");
+          return;
+        }
+
+        setWeather(data);
+      } catch (error) {
+        console.error("Error fetching weather:", error);
+      }
     };
 
     fetchWeather();
   }, [city]);
+
   return (
-<div className="container">
+    <div className="container">
       <h1>Weather Data</h1>
+
       {weather ? (
-        <div>
-          <p>🌡 Temp: {weather.temperature} °C</p>
-          <p>🌬 Wind Speed: {weather.windspeed} km/h</p>
-          <p>🧭 Wind Direction: {weather.winddirection}°</p>
-          <p>🌤 Weather Code: {weather.weathercode}</p>
+        <div style={{ fontSize: "20px", lineHeight: "2" }}>
+          <p><WiThermometer size={30} /> Temperature: {weather.main.temp} °C</p>
+          <p><WiHumidity size={30} /> Humidity: {weather.main.humidity}%</p>
+          <p><WiStrongWind size={30} /> Wind Speed: {weather.wind.speed} m/s</p>
+          <p><WiBarometer size={30} /> Pressure: {weather.main.pressure} hPa</p>
+          <p><FaCity size={25} /> City: {weather.name}</p>
         </div>
       ) : (
         <p>Loading...</p>
@@ -50,4 +57,5 @@ const c = data[city.trim().toLowerCase()];
     </div>
   );
 }
+
 export default Weather;
